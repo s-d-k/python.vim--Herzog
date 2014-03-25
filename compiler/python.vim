@@ -11,13 +11,13 @@ let current_compiler = "python"
 let s:cpo_save = &cpo
 set cpo-=C
 
-setlocal makeprg=python
+CompilerSet makeprg=python
 
 "the last line: \%-G%.%# is meant to suppress some
 "late error messages that I found could occur e.g.
 "with wxPython and that prevent one from using :clast
 "to go to the relevant file and line of the traceback.
-setlocal errorformat=
+CompilerSet errorformat=
 	\%A\ \ File\ \"%f\"\\\,\ line\ %l\\\,%m,
 	\%C\ \ \ \ %.%#,
 	\%+Z%.%#Error\:\ %.%#,
